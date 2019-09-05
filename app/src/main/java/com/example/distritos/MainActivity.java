@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("dni",txt_dni.getText().toString());
                 intent.putExtra("provincia",resultadoProvincia);
                 startActivity(intent);
-
+//continuar
 
             }
         });
