@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Distritos</string>
+    <string-array name="provincias">
+        <item>Arequipa</item>
+        <item>Camana</item>
+    </string-array>
+
+    <string-array name="distritosArequipa">
+        <item>Arequipa</item>
+        <item>Cayma</item>
+        <item>Cerro Colorado</item>
+        <item>Characato</item>
+    </string-array>
+
+    <string-array name="distritosCamana">
+        <item>José María Quimper</item>
+        <item>Mariscal Cáceres</item>
+        <item>Ocona</item>
+        <item>Quilca</item>
+    </string-array>
+
+</resources>
