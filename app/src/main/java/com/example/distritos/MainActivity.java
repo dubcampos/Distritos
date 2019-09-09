@@ -42,18 +42,50 @@ public class MainActivity extends AppCompatActivity {
                 if (i == 0){
 
                     String[] distritosArequipa = getResources().getStringArray(R.array.distritosArequipa);
-                    ArrayAdapter<String> adapterDistrito1 = new ArrayAdapter<String>(MainActivity.this,R.layout.datos, distritosArequipa);
+                    final ArrayAdapter<String> adapterDistrito1 = new ArrayAdapter<String>(MainActivity.this,R.layout.datos, distritosArequipa);
 
                     spn_distritos.setAdapter(adapterDistrito1);
                     resultadoProvincia = provincias[i];
 
+                    spn_distritos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            resultaDistrito = adapterDistrito1.getItem(i);
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+
+
+
+
+
                 }else if (i == 1){
 
                     String[] distritosCamana = getResources().getStringArray(R.array.distritosCamana);
-                    ArrayAdapter<String> adapterDistrito2 = new ArrayAdapter<String>(MainActivity.this,R.layout.datos, distritosCamana);
+                    final ArrayAdapter<String> adapterDistrito2 = new ArrayAdapter<String>(MainActivity.this,R.layout.datos, distritosCamana);
 
                     spn_distritos.setAdapter(adapterDistrito2);
                     resultadoProvincia = provincias[i];
+
+                    spn_distritos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                            resultaDistrito = adapterDistrito2.getItem(i);
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> adapterView) {
+
+                        }
+                    });
+
+
                 }
             }
 
@@ -69,8 +101,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,PantallaResultados.class);
                 intent.putExtra("dni",txt_dni.getText().toString());
                 intent.putExtra("provincia",resultadoProvincia);
+                intent.putExtra("distrito",resultaDistrito);
                 startActivity(intent);
-//continuar
+
 
             }
         });
